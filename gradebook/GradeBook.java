@@ -34,6 +34,28 @@ public class GradeBook {
                     return;
 
                 // Challenge: write another option to allow updating grades for a selected student
+                    case "3":
+    System.out.print("Enter the first name of the student: ");
+    String firstName = input.nextLine();
+    boolean found = false;
+
+    for (Student student : students) {
+        if (student.getFirstName().equalsIgnoreCase(firstName)) {
+            System.out.print("Enter the new grade: ");
+            int newGrade = input.nextInt();
+            input.nextLine(); 
+            student.setGrade(newGrade);
+            System.out.println("Grade updated!");
+            found = true;
+            break;
+        }
+    }
+
+    if (!found) {
+        System.out.println("Student not found.");
+    }
+    break;
+
             }
         }
     }
